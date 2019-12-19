@@ -23,7 +23,7 @@ namespace SharpReverseProxy {
             var uri = GeRequestUri(context);
             var resultBuilder = new ProxyResultBuilder(uri);
 
-            var matchedRule = _options.ProxyRules.FirstOrDefault(r => r.Matcher.Invoke(uri));
+            var matchedRule = _options.ProxyRules.FirstOrDefault(r => r.Matcher.Invoke(uri, context));
             if (matchedRule == null) {
                 await _next(context);
                 _options.Reporter.Invoke(resultBuilder.NotProxied(context.Response.StatusCode));

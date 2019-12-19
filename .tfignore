@@ -1,0 +1,13 @@
+# Ignore the NuGet packages folder in the root of the repository.
+# If needed, prefix 'packages' with additional folder names if it's
+# not in the same folder as .tfignore.
+.vs/
+.git/
+.vscode/
+packages
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+package-lock.json
+local.webpack.config.js
